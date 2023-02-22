@@ -54,7 +54,7 @@ function wagesEarnedOnDate(dateStamp){
    
     const answer = hoursWorkedOnDate(dateStamp)
 
-
+    hoursWorkedOnDate(this, dateStamp) * this.payHour
 
     console.log(answer)
     // return answer
