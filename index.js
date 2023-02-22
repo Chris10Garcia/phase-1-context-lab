@@ -51,13 +51,11 @@ function hoursWorkedOnDate(dateStamp){
 }
 
 function wagesEarnedOnDate(dateStamp){
-   
-    const answer = hoursWorkedOnDate(dateStamp)
+    // function.call (this object, function's parameter)
+    return hoursWorkedOnDate.call(this, dateStamp) * this.payPerHour
 
-    hoursWorkedOnDate(this, dateStamp) * this.payHour
-
-    console.log(answer)
-    // return answer
+    
+    
 }
 
 
