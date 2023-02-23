@@ -53,12 +53,24 @@ function hoursWorkedOnDate(dateStamp){
 function wagesEarnedOnDate(dateStamp){
     // function.call (this object, function's parameter)
     return hoursWorkedOnDate.call(this, dateStamp) * this.payPerHour
-
-    
-    
 }
 
 
+
+function findEmployeeByFirstName(srcArray, firstName){
+    return srcArray.find(employObj => employObj.firstName === firstName)
+}
+
+
+
+
+function calculatePayroll(array){
+
+    const allWages = array.map(employObj => allWagesFor.call(employObj))
+    return allWages.reduce((accum, element) => {
+        return accum + element
+    }, 0)
+}
 
 /*
  We're giving you this function. Take a look at it, you might see some usage
@@ -69,7 +81,7 @@ function wagesEarnedOnDate(dateStamp){
  for you to use if you need it!
  */
 
-const allWagesFor = function () {
+ const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
         return e.date
     })
@@ -80,4 +92,5 @@ const allWagesFor = function () {
 
     return payable
 }
+
 
